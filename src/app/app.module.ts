@@ -10,6 +10,7 @@ import { ListarNotasComponent } from './components/notas/listar-notas/listar-not
 import { CardNotaComponent } from './components/notas/card-nota/card-nota.component';
 import { CriarNotaComponent } from './components/notas/criar-nota/criar-nota.component';
 import { EditarNotaComponent } from './components/notas/editar-nota/editar-nota.component';
+import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-nota.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EditarNotaComponent } from './components/notas/editar-nota/editar-nota.
     CardNotaComponent,
     CriarNotaComponent,
     EditarNotaComponent,
+    ExcluirNotaComponent,
   ],
   imports: [
     BrowserModule,

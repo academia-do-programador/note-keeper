@@ -42,6 +42,14 @@ export class NotaService {
     return;
   }
 
+  excluir(nota: Nota) {
+    const indexParaExcluir = this.notas.findIndex((n) => n.id == nota.id);
+
+    this.notas.splice(indexParaExcluir, 1);
+
+    return;
+  }
+
   selecionarPorId(id: number): Nota | undefined {
     return this.notas.find((nota) => nota.id == id);
   }
