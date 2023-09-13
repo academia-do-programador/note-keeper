@@ -12,12 +12,7 @@ export class CriarNotaComponent {
   nota: Nota;
 
   constructor(private notaService: NotaService, private router: Router) {
-    this.nota = new Nota(
-      'Lavar o cachorro 🦮',
-      'Pegar a toalha > pegar o shampoo',
-      'dark',
-      0
-    );
+    this.nota = new Nota('', '', 'dark', 0);
   }
 
   criarNota() {

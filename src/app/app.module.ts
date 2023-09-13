@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ListarNotasComponent } from './components/notas/listar-notas/listar-notas.component';
 import { CardNotaComponent } from './components/notas/card-nota/card-nota.component';
 import { CriarNotaComponent } from './components/notas/criar-nota/criar-nota.component';
+import { EditarNotaComponent } from './components/notas/editar-nota/editar-nota.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CriarNotaComponent } from './components/notas/criar-nota/criar-nota.com
     ListarNotasComponent,
     CardNotaComponent,
     CriarNotaComponent,
+    EditarNotaComponent,
   ],
   imports: [
     BrowserModule,
