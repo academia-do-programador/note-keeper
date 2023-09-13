@@ -21,10 +21,13 @@ export class CriarNotaComponent {
   }
 
   criarNota() {
-    this.notaService.criar(this.nota);
+    this.notaService.criar(this.nota).subscribe((nota) => {
+      this.toastService.success(
+        `Nota ${nota.titulo} criada com sucesso.`,
+        'Sucesso'
+      );
 
-    this.toastService.success('Nota criada com sucesso.', 'Sucesso');
-
-    this.router.navigate(['/notas', 'listar']);
+      this.router.navigate(['/notas', 'listar']);
+    });
   }
 }
