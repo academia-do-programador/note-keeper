@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NotaService } from '../nota.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Nota } from '../nota';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-excluir-nota',
@@ -14,7 +15,8 @@ export class ExcluirNotaComponent implements OnInit {
   constructor(
     private notaService: NotaService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastService: ToastrService
   ) {
     this.nota = new Nota('', '', 'dark', 0);
   }
@@ -27,6 +29,8 @@ export class ExcluirNotaComponent implements OnInit {
 
   excluirNota() {
     this.notaService.excluir(this.nota);
+
+    this.toastService.success('Nota excluída com sucesso.', 'Sucesso');
 
     this.router.navigate(['/notas', 'listar']);
   }

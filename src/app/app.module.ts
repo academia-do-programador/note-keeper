@@ -11,6 +11,7 @@ import { CardNotaComponent } from './components/notas/card-nota/card-nota.compon
 import { CriarNotaComponent } from './components/notas/criar-nota/criar-nota.component';
 import { EditarNotaComponent } from './components/notas/editar-nota/editar-nota.component';
 import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-nota.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,12 @@ import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-no
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    NgbCarouselModule,
+
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
