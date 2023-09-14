@@ -24,14 +24,16 @@ export class ExcluirNotaComponent implements OnInit {
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!);
 
-    this.nota = this.notaService.selecionarPorId(id)!;
+    this.notaService.selecionarPorId(id).subscribe((nota: Nota) => {
+      this.nota = nota;
+    });
   }
 
   excluirNota() {
-    this.notaService.excluir(this.nota);
+    this.notaService.excluir(this.nota).subscribe((nota: Nota) => {
+      this.toastService.success('Nota excluída com sucesso.', 'Sucesso');
 
-    this.toastService.success('Nota excluída com sucesso.', 'Sucesso');
-
-    this.router.navigate(['/notas', 'listar']);
+      this.router.navigate(['/notas', 'listar']);
+    });
   }
 }
