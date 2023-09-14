@@ -15,6 +15,7 @@ import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-no
 import { ToastrModule } from 'ngx-toastr';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CriarCategoriaComponent } from './components/categorias/criar-categoria/criar-categoria.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     CriarNotaComponent,
     EditarNotaComponent,
     ExcluirNotaComponent,
+    CriarCategoriaComponent,
   ],
   imports: [
     BrowserModule,
