@@ -3,6 +3,8 @@ import { Nota } from '../../../models/nota';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NotaService } from '../../../services/nota.service';
 import { ToastrService } from 'ngx-toastr';
+import { CategoriaService } from 'src/app/services/categoria.service';
+import { Categoria } from 'src/app/models/categoria';
 
 @Component({
   selector: 'app-editar-nota',
@@ -11,12 +13,14 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EditarNotaComponent implements OnInit {
   nota: Nota;
-
+  categorias: Categoria[] = [];
+  
   constructor(
     private notaService: NotaService,
+    private categoriaService: CategoriaService,
+    private toastService: ToastrService,
     private route: ActivatedRoute,
-    private router: Router,
-    private toastService: ToastrService
+    private router: Router
   ) {
     this.nota = new Nota('', '', 0, 'dark', 0);
   }
@@ -27,6 +31,12 @@ export class EditarNotaComponent implements OnInit {
     this.notaService.selecionarPorId(id).subscribe((nota: Nota) => {
       this.nota = nota;
     });
+
+    this.categoriaService
+      .selecionarTodos()
+      .subscribe((categorias: Categoria[]) => {
+        this.categorias = categorias;
+      });
   }
 
   editarNota() {
