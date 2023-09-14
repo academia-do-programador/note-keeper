@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Nota } from '../nota';
+import { Nota } from '../../../models/nota';
 import { NotaService } from '../nota.service';
+import { Categoria } from 'src/app/models/categoria';
 
 @Component({
   selector: 'app-listar-notas',
@@ -9,6 +10,7 @@ import { NotaService } from '../nota.service';
 })
 export class ListarNotasComponent implements OnInit {
   notas: Nota[] = [];
+  categorias: Categoria[] = [];
 
   constructor(private notaService: NotaService) {}
 
