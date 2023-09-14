@@ -17,6 +17,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { CriarCategoriaComponent } from './components/categorias/criar-categoria/criar-categoria.component';
 import { FiltrosCategoriasComponent } from './components/filtros-categorias/filtros-categorias.component';
+import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
+import { EditarCategoriaComponent } from './components/categorias/editar-categoria/editar-categoria.component';
+import { ExcluirCategoriaComponent } from './components/categorias/excluir-categoria/excluir-categoria.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { FiltrosCategoriasComponent } from './components/filtros-categorias/filt
     ExcluirNotaComponent,
     CriarCategoriaComponent,
     FiltrosCategoriasComponent,
+    ListarCategoriasComponent,
+    EditarCategoriaComponent,
+    ExcluirCategoriaComponent,
   ],
   imports: [
     BrowserModule,
