@@ -24,14 +24,19 @@ export class EditarNotaComponent implements OnInit {
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!);
 
-    this.nota = this.notaService.selecionarPorId(id)!;
+    this.notaService.selecionarPorId(id).subscribe((nota: Nota) => {
+      this.nota = nota;
+    });
   }
 
   editarNota() {
-    this.notaService.editar(this.nota);
+    this.notaService.editar(this.nota).subscribe((nota: Nota) => {
+      this.toastService.success(
+        `Nota "${nota.titulo}" editada com sucesso.`,
+        'Sucesso'
+      );
 
-    this.toastService.success('Nota editada com sucesso.', 'Sucesso');
-
-    this.router.navigate(['/notas', 'listar']);
+      this.router.navigate(['/notas', 'listar']);
+    });
   }
 }
