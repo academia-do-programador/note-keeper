@@ -32,6 +32,21 @@
         ></textarea>
       </div>
 
+      <div class="mb-3">
+        <label for="conteudo" class="form-label fs-5 fw-semibold"
+          >Categoria</label
+        >
+        <select
+          class="form-select w-50"
+          [(ngModel)]="nota.categoriaId"
+          name="categoriaId"
+        >
+          <option *ngFor="let categoria of categorias" [value]="categoria.id">
+            {{ categoria.titulo }}
+          </option>
+        </select>
+      </div>
+
       <label for="tema" class="form-label fs-5 fw-semibold">Tema</label>
       <div>
         <div class="form-check form-check-inline">

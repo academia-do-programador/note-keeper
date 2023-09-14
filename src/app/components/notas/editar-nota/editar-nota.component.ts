@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Nota } from '../../../models/nota';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NotaService } from '../nota.service';
+import { NotaService } from '../../../services/nota.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -18,7 +18,7 @@ export class EditarNotaComponent implements OnInit {
     private router: Router,
     private toastService: ToastrService
   ) {
-    this.nota = new Nota('', '', 'dark', 0);
+    this.nota = new Nota('', '', 0, 'dark', 0);
   }
 
   ngOnInit(): void {

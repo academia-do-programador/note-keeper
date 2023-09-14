@@ -1,23 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Nota } from '../../../models/nota';
-import { NotaService } from '../nota.service';
+import { NotaService } from '../../../services/nota.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CategoriaService } from 'src/app/services/categoria.service';
+import { Categoria } from 'src/app/models/categoria';
 
 @Component({
   selector: 'app-criar-nota',
   templateUrl: './criar-nota.component.html',
   styleUrls: ['./criar-nota.component.css'],
 })
-export class CriarNotaComponent {
+export class CriarNotaComponent implements OnInit {
   nota: Nota;
+
+  categorias: Categoria[] = [];
 
   constructor(
     private notaService: NotaService,
-    private router: Router,
-    private toastService: ToastrService
+    private categoriaService: CategoriaService,
+    private toastService: ToastrService,
+    private router: Router
   ) {
-    this.nota = new Nota('', '', 'dark', 0);
+    this.nota = new Nota('', '', 0, 'dark', 0);
+  }
+
+  ngOnInit(): void {
+    this.categoriaService
+      .selecionarTodos()
+      .subscribe((categorias: Categoria[]) => {
+        this.categorias = categorias;
+      });
   }
 
   criarNota() {

@@ -1,5 +1,22 @@
-<div class="row">
-  <div class="col-2" *ngFor="let categoria of categorias; index as number">
-    <span class="badge rounded-pill bg-danger">{{ categoria.titulo }}</span>
+<div class="row g-2">
+  <div class="col-6 col-lg-1">
+    <span
+      (click)="selecionarTodas()"
+      ngbTooltip="Todas as notas"
+      class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2"
+      >Todos</span
+    >
+  </div>
+
+  <div
+    class="col-6 col-lg-1"
+    *ngFor="let categoria of categorias; index as number"
+  >
+    <span
+      (click)="selecionarComFiltro(categoria)"
+      ngbTooltip="Filtrar por categoria: {{ categoria.titulo }}"
+      class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2"
+      >{{ categoria.titulo }}</span
+    >
   </div>
 </div>

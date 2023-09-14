@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Categoria } from 'src/app/models/categoria';
 
 @Component({
@@ -8,4 +8,18 @@ import { Categoria } from 'src/app/models/categoria';
 })
 export class FiltrosCategoriasComponent {
   @Input({ required: true }) categorias: Categoria[] = [];
+
+  @Output() filtroClicado: EventEmitter<Categoria | null>;
+
+  constructor() {
+    this.filtroClicado = new EventEmitter();
+  }
+
+  selecionarTodas() {
+    this.filtroClicado.emit(null);
+  }
+
+  selecionarComFiltro(categoria: Categoria) {
+    this.filtroClicado.emit(categoria);
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NotaService } from '../nota.service';
+import { NotaService } from '../../../services/nota.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Nota } from '../../../models/nota';
 import { ToastrService } from 'ngx-toastr';
@@ -18,7 +18,7 @@ export class ExcluirNotaComponent implements OnInit {
     private router: Router,
     private toastService: ToastrService
   ) {
-    this.nota = new Nota('', '', 'dark', 0);
+    this.nota = new Nota('', '', 0, 'dark', 0);
   }
 
   ngOnInit(): void {
