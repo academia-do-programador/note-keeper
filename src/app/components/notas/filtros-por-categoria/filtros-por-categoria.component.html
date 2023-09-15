@@ -9,10 +9,7 @@
     >
   </div>
 
-  <div
-    class="col-6 col-lg-1"
-    *ngFor="let categoria of categorias; index as number"
-  >
+  <div class="col-6 col-lg-1" *ngFor="let categoria of categorias">
     <span
       (click)="selecionarComFiltro(categoria)"
       ngbTooltip="Filtrar por categoria: {{ categoria.titulo }}"
