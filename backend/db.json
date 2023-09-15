@@ -52,13 +52,6 @@
       "conteudo": "Testando",
       "categoriaId": "4",
       "tema": "danger"
-    },
-    {
-      "id": 6,
-      "titulo": "Teste ngOnChanges Edit",
-      "conteudo": "12321312312",
-      "categoriaId": "4",
-      "tema": "info"
     }
   ]
 }

@@ -31,9 +31,8 @@ export class CriarNotaComponent implements OnInit {
       .subscribe((categorias: Categoria[]) => {
         this.categorias = categorias;
         this.nota.categoriaId = categorias[0].id!;
-
-        this.onCategoriaSelecionada(this.nota.categoriaId);
-      });
+      })
+      .add(() => this.onCategoriaSelecionada(this.nota.categoriaId));
   }
 
   criarNota() {

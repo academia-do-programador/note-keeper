@@ -31,14 +31,14 @@ export class EditarNotaComponent implements OnInit {
 
     this.notaService.selecionarPorId(id).subscribe((nota: Nota) => {
       this.nota = nota;
-      this.onCategoriaSelecionada(nota.categoriaId);
     });
 
     this.categoriaService
       .selecionarTodos()
       .subscribe((categorias: Categoria[]) => {
         this.categorias = categorias;
-      });
+      })
+      .add(() => this.onCategoriaSelecionada(this.nota.categoriaId));
   }
 
   editarNota() {
