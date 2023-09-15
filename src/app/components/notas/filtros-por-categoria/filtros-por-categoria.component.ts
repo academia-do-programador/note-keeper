@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Categoria } from 'src/app/models/categoria';
 
 @Component({
-  selector: 'app-filtros-categorias',
-  templateUrl: './filtros-categorias.component.html',
-  styleUrls: ['./filtros-categorias.component.css'],
+  selector: 'app-filtros-por-categoria',
+  templateUrl: './filtros-por-categoria.component.html',
+  styleUrls: ['./filtros-por-categoria.component.css'],
 })
-export class FiltrosCategoriasComponent {
+export class FiltrosPorCategoriaComponent {
   @Input({ required: true }) categorias: Categoria[] = [];
 
   @Output() onFiltroSelecionado: EventEmitter<Categoria | null>;

@@ -16,10 +16,10 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CriarCategoriaComponent } from './components/categorias/criar-categoria/criar-categoria.component';
-import { FiltrosCategoriasComponent } from './components/filtros-categorias/filtros-categorias.component';
 import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
 import { EditarCategoriaComponent } from './components/categorias/editar-categoria/editar-categoria.component';
 import { ExcluirCategoriaComponent } from './components/categorias/excluir-categoria/excluir-categoria.component';
+import { FiltrosPorCategoriaComponent } from './components/notas/filtros-por-categoria/filtros-por-categoria.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { ExcluirCategoriaComponent } from './components/categorias/excluir-categ
     EditarNotaComponent,
     ExcluirNotaComponent,
     CriarCategoriaComponent,
-    FiltrosCategoriasComponent,
+    FiltrosPorCategoriaComponent,
     ListarCategoriasComponent,
     EditarCategoriaComponent,
     ExcluirCategoriaComponent,
