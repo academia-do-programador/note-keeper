@@ -16,7 +16,7 @@
       (click)="selecionarComFiltro(categoria)"
       ngbTooltip="Filtrar por categoria: {{ categoria.titulo }}"
       class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2 fs-6 fw-semibold"
-      >{{ categoria.titulo }}</span
+      >{{ categoria.titulo.split(" ")[0] }}</span
     >
   </div>
 </div>

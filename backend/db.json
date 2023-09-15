@@ -11,6 +11,10 @@
     {
       "id": 3,
       "titulo": "Trabalho"
+    },
+    {
+      "titulo": "Estudo Editado",
+      "id": 4
     }
   ],
   "notas": [
@@ -41,6 +45,13 @@
       "tema": "danger",
       "categoriaId": "2",
       "id": 4
+    },
+    {
+      "id": 5,
+      "titulo": "Teste com Categoria",
+      "conteudo": "Testando",
+      "categoriaId": "4",
+      "tema": "danger"
     }
   ]
 }

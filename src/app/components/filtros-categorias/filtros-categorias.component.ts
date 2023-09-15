@@ -9,17 +9,17 @@ import { Categoria } from 'src/app/models/categoria';
 export class FiltrosCategoriasComponent {
   @Input({ required: true }) categorias: Categoria[] = [];
 
-  @Output() filtroClicado: EventEmitter<Categoria | null>;
+  @Output() onFiltroSelecionado: EventEmitter<Categoria | null>;
 
   constructor() {
-    this.filtroClicado = new EventEmitter();
+    this.onFiltroSelecionado = new EventEmitter();
   }
 
   selecionarTodas() {
-    this.filtroClicado.emit(null);
+    this.onFiltroSelecionado.emit(null);
   }
 
   selecionarComFiltro(categoria: Categoria) {
-    this.filtroClicado.emit(categoria);
+    this.onFiltroSelecionado.emit(categoria);
   }
 }
