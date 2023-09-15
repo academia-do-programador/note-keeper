@@ -14,7 +14,7 @@ import { Categoria } from 'src/app/models/categoria';
 export class EditarNotaComponent implements OnInit {
   nota: Nota;
   categorias: Categoria[] = [];
-  
+
   constructor(
     private notaService: NotaService,
     private categoriaService: CategoriaService,
@@ -41,7 +41,10 @@ export class EditarNotaComponent implements OnInit {
 
   editarNota() {
     this.notaService.editar(this.nota).subscribe((nota: Nota) => {
-      this.toastService.success('Nota editada com sucesso.', 'Sucesso');
+      this.toastService.success(
+        `Nota "${nota.titulo}" editada com sucesso.`,
+        'Sucesso'
+      );
 
       this.router.navigate(['/notas', 'listar']);
     });

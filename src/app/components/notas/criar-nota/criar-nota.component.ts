@@ -30,13 +30,14 @@ export class CriarNotaComponent implements OnInit {
       .selecionarTodos()
       .subscribe((categorias: Categoria[]) => {
         this.categorias = categorias;
+        this.nota.categoriaId = categorias[0].id!;
       });
   }
 
   criarNota() {
     this.notaService.criar(this.nota).subscribe((nota) => {
       this.toastService.success(
-        `Nota ${nota.titulo} criada com sucesso.`,
+        `Nota "${nota.titulo}" criada com sucesso.`,
         'Sucesso'
       );
 

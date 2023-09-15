@@ -23,7 +23,7 @@ export class CriarCategoriaComponent {
   criarCategoria() {
     this.categoriaService.criar(this.categoria).subscribe((categoria) => {
       this.toastService.success(
-        `Categoria ${categoria.titulo} criada com sucesso.`,
+        `Categoria "${categoria.titulo}" criada com sucesso.`,
         'Sucesso'
       );
 
