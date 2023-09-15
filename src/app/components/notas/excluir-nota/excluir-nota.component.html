@@ -15,7 +15,11 @@
               >Id: {{ nota.id }}</span
             >
           </div>
-          <p class="my-4">{{ nota.conteudo }}</p>
+          <span class="text-muted fs-5"
+            ><span class="fw-semibold">Categoria:</span>
+            {{ nota.categoria?.titulo }}</span
+          >
+          <p class="my-4 fs-5">{{ nota.conteudo }}</p>
         </div>
       </div>
 

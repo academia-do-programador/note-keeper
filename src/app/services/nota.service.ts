@@ -29,8 +29,15 @@ export class NotaService {
     return this.http.delete<Nota>(url);
   }
 
-  selecionarPorId(id: number): Observable<Nota> {
-    const url = `${this.NOTAS_API_URL}/${id}`;
+  selecionarPorId(
+    id: number,
+    incluirCategorias: boolean = false
+  ): Observable<Nota> {
+    let url = '';
+
+    if (incluirCategorias)
+      url = `${this.NOTAS_API_URL}/${id}?_expand=categoria`;
+    else url = `${this.NOTAS_API_URL}/${id}`;
 
     return this.http.get<Nota>(url);
   }

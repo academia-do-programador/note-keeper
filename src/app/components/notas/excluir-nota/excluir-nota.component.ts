@@ -24,7 +24,7 @@ export class ExcluirNotaComponent implements OnInit {
   ngOnInit(): void {
     const id = parseInt(this.route.snapshot.paramMap.get('id')!);
 
-    this.notaService.selecionarPorId(id).subscribe((nota: Nota) => {
+    this.notaService.selecionarPorId(id, true).subscribe((nota: Nota) => {
       this.nota = nota;
     });
   }

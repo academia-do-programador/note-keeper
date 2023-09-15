@@ -35,6 +35,7 @@
         <select
           class="form-select w-50"
           [(ngModel)]="nota.categoriaId"
+          (ngModelChange)="onCategoriaSelecionada($event)"
           name="categoriaId"
         >
           <option *ngFor="let categoria of categorias" [value]="categoria.id">
@@ -99,6 +100,10 @@
                 >Id: {{ nota.id }}</span
               >
             </div>
+            <span class="text-muted"
+              ><span class="fw-semibold">Categoria:</span>
+              {{ categoriaSelecionada }}</span
+            >
             <p class="card-text my-4">{{ nota.conteudo }}</p>
           </div>
         </div>

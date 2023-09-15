@@ -13,8 +13,8 @@ import { Categoria } from 'src/app/models/categoria';
 })
 export class CriarNotaComponent implements OnInit {
   nota: Nota;
-
   categorias: Categoria[] = [];
+  categoriaSelecionada: string = '';
 
   constructor(
     private notaService: NotaService,
@@ -31,6 +31,8 @@ export class CriarNotaComponent implements OnInit {
       .subscribe((categorias: Categoria[]) => {
         this.categorias = categorias;
         this.nota.categoriaId = categorias[0].id!;
+
+        this.onCategoriaSelecionada(this.nota.categoriaId);
       });
   }
 
@@ -43,5 +45,11 @@ export class CriarNotaComponent implements OnInit {
 
       this.router.navigate(['/notas', 'listar']);
     });
+  }
+
+  onCategoriaSelecionada(categoriaId: number) {
+    const categoria = this.categorias.find((c) => c.id == categoriaId);
+
+    this.categoriaSelecionada = categoria?.titulo!;
   }
 }

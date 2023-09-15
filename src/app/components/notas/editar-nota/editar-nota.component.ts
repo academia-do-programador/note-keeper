@@ -14,6 +14,7 @@ import { Categoria } from 'src/app/models/categoria';
 export class EditarNotaComponent implements OnInit {
   nota: Nota;
   categorias: Categoria[] = [];
+  categoriaSelecionada: string = '';
 
   constructor(
     private notaService: NotaService,
@@ -30,6 +31,7 @@ export class EditarNotaComponent implements OnInit {
 
     this.notaService.selecionarPorId(id).subscribe((nota: Nota) => {
       this.nota = nota;
+      this.onCategoriaSelecionada(nota.categoriaId);
     });
 
     this.categoriaService
@@ -48,5 +50,11 @@ export class EditarNotaComponent implements OnInit {
 
       this.router.navigate(['/notas', 'listar']);
     });
+  }
+
+  onCategoriaSelecionada(categoriaId: number) {
+    const categoria = this.categorias.find((c) => c.id == categoriaId);
+
+    this.categoriaSelecionada = categoria?.titulo!;
   }
 }
