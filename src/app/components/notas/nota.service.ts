@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root', // App module
 })
 export class NotaService {
-  private API_URL = 'note-keeper-api/api/notas/notas';
+  private API_URL = 'https://note-keeper-api/api/notas';
 
   constructor(private http: HttpClient) {}
 
