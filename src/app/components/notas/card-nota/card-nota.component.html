@@ -30,10 +30,15 @@
       class="btn btn-outline-{{ nota.tema }} rounded-5 py-2"
       (click)="arquivarNota(nota)"
       aria-label="Arquivar"
-      ngbTooltip="Arquivar"
+      [ngbTooltip]="nota.arquivada ? 'Reativar' : 'Ativar'"
       placement="right"
     >
-      <i class="bi bi-archive-fill"></i>
+      <i
+        class="bi"
+        [ngClass]="
+          nota.arquivada ? 'bi-arrow-left-circle-fill' : 'bi-archive-fill'
+        "
+      ></i>
     </button>
   </div>
 </div>

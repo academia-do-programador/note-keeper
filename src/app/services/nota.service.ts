@@ -53,18 +53,28 @@ export class NotaService {
   selecionarNotasArquivadas(): Observable<Nota[]> {
     const url = `${this.NOTAS_API_URL}?arquivada=true`;
 
-    console.log(url);
-
     return this.http.get<Nota[]>(url);
   }
 
   selecionarNotasPorCategoria(categoria: Categoria): Observable<Nota[]> {
-    const url = `${this.CATEGORIAS_API_URL}/${categoria.id}/notas`;
+    const url = `${this.CATEGORIAS_API_URL}/${categoria.id}/notas?arquivadas_ne=true`;
+
+    return this.http.get<Nota[]>(url);
+  }
+
+  selecionarArquivadasNotasPorCategoria(
+    categoria: Categoria
+  ): Observable<Nota[]> {
+    const url = `${this.CATEGORIAS_API_URL}/${categoria.id}/notas?arquivada=true`;
 
     return this.http.get<Nota[]>(url);
   }
 
   arquivar(nota: Nota): Observable<Nota> {
+    return this.editar(nota);
+  }
+
+  reativar(nota: Nota): Observable<Nota> {
     return this.editar(nota);
   }
 }

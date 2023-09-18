@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Nota } from '../../../models/nota';
-import { NotaService } from '../../../services/nota.service';
-import { Categoria } from 'src/app/models/categoria';
-import { CategoriaService } from 'src/app/services/categoria.service';
-import { switchMap } from 'rxjs';
+import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { switchMap } from 'rxjs';
+import { Categoria } from 'src/app/models/categoria';
+import { Nota } from 'src/app/models/nota';
+import { CategoriaService } from 'src/app/services/categoria.service';
+import { NotaService } from 'src/app/services/nota.service';
 
 @Component({
-  selector: 'app-listar-notas',
-  templateUrl: './listar-notas.component.html',
-  styleUrls: ['./listar-notas.component.css'],
+  selector: 'app-listar-notas-arquivadas',
+  templateUrl: './listar-notas-arquivadas.component.html',
+  styleUrls: ['./listar-notas-arquivadas.component.css'],
 })
-export class ListarNotasComponent implements OnInit {
+export class ListarNotasArquivadasComponent {
   notas: Nota[] = [];
   categorias: Categoria[] = [];
 
@@ -22,7 +22,7 @@ export class ListarNotasComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.selecionarTodasNotas();
+    this.selecionarNotasArquivadas();
 
     this.categoriaService
       .selecionarTodos()
@@ -33,39 +33,39 @@ export class ListarNotasComponent implements OnInit {
 
   filtrarNotasPorCategoria(categoria: Categoria | null): void {
     if (categoria == null) {
-      this.selecionarTodasNotas();
+      this.selecionarNotasArquivadas();
       return;
     }
 
     this.selecionarNotasPorCategoria(categoria);
   }
 
-  selecionarTodasNotas(): void {
-    this.notaService.selecionarTodos().subscribe((notas: Nota[]) => {
+  selecionarNotasArquivadas(): void {
+    this.notaService.selecionarNotasArquivadas().subscribe((notas: Nota[]) => {
       this.notas = notas;
     });
   }
 
   selecionarNotasPorCategoria(categoria: Categoria): void {
     this.notaService
-      .selecionarNotasPorCategoria(categoria)
+      .selecionarArquivadasNotasPorCategoria(categoria)
       .subscribe((notas: Nota[]) => {
         this.notas = notas;
       });
   }
 
-  arquivarNota(nota: Nota): void {
-    nota.arquivar();
+  reativarNota(nota: Nota): void {
+    nota.reativar();
 
     this.notaService
-      .arquivar(nota)
-      .pipe(switchMap(() => this.notaService.selecionarTodos()))
+      .reativar(nota)
+      .pipe(switchMap(() => this.notaService.selecionarNotasArquivadas()))
       .subscribe((notasAtualizadas: Nota[]) => {
         this.notas = notasAtualizadas;
 
         this.toastService.success(
-          `Nota ${nota.titulo} arquivada com sucesso.`,
-          'Nota Arquivada'
+          `Nota ${nota.titulo} reativada com sucesso.`,
+          'Nota Reativar'
         );
       });
   }
