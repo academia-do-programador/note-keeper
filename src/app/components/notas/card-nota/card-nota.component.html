@@ -15,7 +15,7 @@
       ngbTooltip="Editar"
       placement="bottom"
     >
-      <i class="bi bi-pen"></i>
+      <i class="bi bi-pen-fill"></i>
     </button>
     <button
       class="btn btn-outline-{{ nota.tema }} rounded-5 py-2"
@@ -24,7 +24,16 @@
       ngbTooltip="Excluir"
       placement="right"
     >
-      <i class="bi bi-trash"></i>
+      <i class="bi bi-trash-fill"></i>
+    </button>
+    <button
+      class="btn btn-outline-{{ nota.tema }} rounded-5 py-2"
+      (click)="arquivarNota(nota)"
+      aria-label="Arquivar"
+      ngbTooltip="Arquivar"
+      placement="right"
+    >
+      <i class="bi bi-archive-fill"></i>
     </button>
   </div>
 </div>

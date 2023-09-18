@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, shareReplay } from 'rxjs';
+import { Observable, shareReplay, switchMap } from 'rxjs';
 import { Nota } from 'src/app/models/nota';
 import { Categoria } from '../models/categoria';
 
@@ -43,12 +43,28 @@ export class NotaService {
   }
 
   selecionarTodos(): Observable<Nota[]> {
-    return this.http.get<Nota[]>(this.NOTAS_API_URL);
+    const url = `${this.NOTAS_API_URL}?arquivada_ne=true`;
+
+    console.log(url);
+
+    return this.http.get<Nota[]>(url);
+  }
+
+  selecionarNotasArquivadas(): Observable<Nota[]> {
+    const url = `${this.NOTAS_API_URL}?arquivada=true`;
+
+    console.log(url);
+
+    return this.http.get<Nota[]>(url);
   }
 
   selecionarNotasPorCategoria(categoria: Categoria): Observable<Nota[]> {
     const url = `${this.CATEGORIAS_API_URL}/${categoria.id}/notas`;
 
     return this.http.get<Nota[]>(url);
+  }
+
+  arquivar(nota: Nota): Observable<Nota> {
+    return this.editar(nota);
   }
 }

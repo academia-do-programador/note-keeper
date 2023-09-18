@@ -20,7 +20,10 @@
 
     <div class="row g-3">
       <div *ngFor="let nota of notas" class="col-sm col-md-6 col-lg-3">
-        <app-nota [nota]="nota"></app-nota>
+        <app-nota
+          [nota]="nota"
+          (onArquivarClicado)="arquivarNota($event)"
+        ></app-nota>
       </div>
     </div>
   </div>
