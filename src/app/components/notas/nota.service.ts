@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Nota } from './nota';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root', // App module
 })
 export class NotaService {
-  private API_URL = 'https://note-keeper-api-zqnm.onrender.com/api/notas';
+  private API_URL = `${environment.API_URL}/api/notas`;
 
   constructor(private http: HttpClient) {}
 
