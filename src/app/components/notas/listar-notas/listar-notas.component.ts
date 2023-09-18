@@ -55,7 +55,7 @@ export class ListarNotasComponent implements OnInit {
   }
 
   arquivarNota(nota: Nota): void {
-    nota.arquivar();
+    nota.arquivada = true;
 
     this.notaService
       .arquivar(nota)

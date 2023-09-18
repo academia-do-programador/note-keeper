@@ -55,7 +55,7 @@ export class ListarNotasArquivadasComponent {
   }
 
   reativarNota(nota: Nota): void {
-    nota.reativar();
+    nota.arquivada = false;
 
     this.notaService
       .reativar(nota)

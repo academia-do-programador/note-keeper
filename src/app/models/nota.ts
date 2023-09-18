@@ -26,14 +26,6 @@ export class Nota {
 
     this.arquivada = false;
   }
-
-  arquivar(): void {
-    this.arquivada = true;
-  }
-
-  reativar(): void {
-    this.arquivada = false;
-  }
 }
 
 type Tema = 'info' | 'warning' | 'danger' | 'dark';
