@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
+import { CriarCategoriaComponent } from './components/categorias/criar-categoria/criar-categoria.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ListarCategoriasComponent } from './components/categorias/listar-catego
     EditarNotaComponent,
     ExcluirNotaComponent,
     ListarCategoriasComponent,
+    CriarCategoriaComponent,
   ],
   imports: [
     BrowserModule,
