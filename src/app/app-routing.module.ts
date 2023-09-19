@@ -7,6 +7,7 @@ import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-no
 import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
 import { CriarCategoriaComponent } from './components/categorias/criar-categoria/criar-categoria.component';
 import { EditarCategoriaComponent } from './components/categorias/editar-categoria/editar-categoria.component';
+import { ExcluirCategoriaComponent } from './components/categorias/excluir-categoria/excluir-categoria.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'categorias/editar/:id',
     component: EditarCategoriaComponent,
+  },
+  {
+    path: 'categorias/excluir/:id',
+    component: ExcluirCategoriaComponent,
   },
 ];
 
