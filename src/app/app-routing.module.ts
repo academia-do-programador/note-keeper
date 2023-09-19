@@ -4,6 +4,7 @@ import { ListarNotasComponent } from './components/notas/listar-notas/listar-not
 import { CriarNotaComponent } from './components/notas/criar-nota/criar-nota.component';
 import { EditarNotaComponent } from './components/notas/editar-nota/editar-nota.component';
 import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-nota.component';
+import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: 'notas/excluir/:id',
     component: ExcluirNotaComponent,
+  },
+
+  {
+    path: 'categorias/listar',
+    component: ListarCategoriasComponent,
   },
 ];
 

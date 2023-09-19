@@ -1,4 +1,22 @@
 {
+  "categorias": [
+    {
+      "titulo": "Lazer",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Mercado"
+    },
+    {
+      "id": 3,
+      "titulo": "Trabalho"
+    },
+    {
+      "titulo": "Estudo",
+      "id": 4
+    }
+  ],
   "notas": [
     {
       "id": 1,

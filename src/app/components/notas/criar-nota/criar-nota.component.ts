@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Nota } from '../nota';
-import { NotaService } from '../nota.service';
+import { Nota } from '../../../models/nota';
+import { NotaService } from '../../../services/nota.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
