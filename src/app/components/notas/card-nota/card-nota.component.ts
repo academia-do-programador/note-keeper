@@ -14,5 +14,6 @@ export class CardNotaComponent {
     titulo: 'Lavar o cachorro 🦮',
     conteudo: 'Pegar a toalha > Pegar o Shampoo',
     tema: 'dark',
+    categoriaId: 0,
   };
 }
