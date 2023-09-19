@@ -12,7 +12,7 @@ import { ExcluirCategoriaComponent } from './components/categorias/excluir-categ
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'notas/listar',
+    redirectTo: 'categorias/listar',
     pathMatch: 'full',
   },
   {
