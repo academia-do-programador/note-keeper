@@ -36,7 +36,7 @@
       "conteudo": "Pesquisar material",
       "tema": "info",
       "categoriaId": 3,
-      "arquivada": true
+      "arquivada": false
     },
     {
       "id": 3,
@@ -44,7 +44,7 @@
       "conteudo": "Preparar projetos para as aulas",
       "tema": "danger",
       "categoriaId": 3,
-      "arquivada": true
+      "arquivada": false
     },
     {
       "titulo": "Teste do Insmonia",

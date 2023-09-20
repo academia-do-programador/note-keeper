@@ -44,14 +44,14 @@ export class ListarNotasArquivadasComponent {
       });
   }
 
-  arquivarNota(nota: Nota) {
-    nota.arquivada = true;
+  reativarNota(nota: Nota) {
+    nota.arquivada = false;
 
     this.notaService.editar(nota).subscribe((nota: Nota) => {
-      this.toastService.success(`Nota ${nota.titulo} arquivada com sucesso!`);
+      this.toastService.success(`Nota ${nota.titulo} reativada com sucesso!`);
 
       this.notaService
-        .selecionarTodos()
+        .selecionarNotasArquivadas()
         .subscribe((notas: Nota[]) => (this.notas = notas));
     });
   }
