@@ -36,7 +36,10 @@ export class NotaService {
   }
 
   selecionarTodos(): Observable<Nota[]> {
-    return this.http.get<Nota[]>(this.NOTAS_API_URL);
+    // not equals
+    const url = `${this.NOTAS_API_URL}?arquivada=false`;
+
+    return this.http.get<Nota[]>(url);
   }
 
   // categorias/1/notas

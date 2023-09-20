@@ -3,6 +3,7 @@ import { Nota } from '../../../models/nota';
 import { NotaService } from '../../../services/nota.service';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { Categoria } from 'src/app/models/categoria';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-listar-notas',
@@ -15,7 +16,8 @@ export class ListarNotasComponent implements OnInit {
 
   constructor(
     private notaService: NotaService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private toastService: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -40,5 +42,17 @@ export class ListarNotasComponent implements OnInit {
       .subscribe((notas: Nota[]) => {
         this.notas = notas;
       });
+  }
+
+  arquivarNota(nota: Nota) {
+    nota.arquivada = true;
+
+    this.notaService.editar(nota).subscribe((nota: Nota) => {
+      this.toastService.success(`Nota ${nota.titulo} arquivada com sucesso!`);
+
+      this.notaService
+        .selecionarTodos()
+        .subscribe((notas: Nota[]) => (this.notas = notas));
+    });
   }
 }

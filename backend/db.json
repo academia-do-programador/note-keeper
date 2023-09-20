@@ -27,42 +27,32 @@
       "titulo": "Lavar o cachorro 🦮",
       "conteudo": "Pegar o shampoo > pegar a toalha",
       "tema": "warning",
-      "categoriaId": 3
+      "categoriaId": 3,
+      "arquivada": false
     },
     {
       "id": 2,
       "titulo": "Planejar as Aulas de Angular",
       "conteudo": "Pesquisar material",
       "tema": "info",
-      "categoriaId": 3
+      "categoriaId": 3,
+      "arquivada": true
     },
     {
       "id": 3,
       "titulo": "Atualizar Aplicações Angular",
       "conteudo": "Preparar projetos para as aulas",
       "tema": "danger",
-      "categoriaId": 3
+      "categoriaId": 3,
+      "arquivada": true
     },
     {
       "titulo": "Teste do Insmonia",
       "conteudo": "Testando a rota POST",
       "tema": "dark",
       "id": 5,
-      "categoriaId": 4
-    },
-    {
-      "id": 6,
-      "titulo": "Lavar o irmão do cachorro 🦮",
-      "conteudo": "12321312321",
-      "tema": "danger",
-      "categoriaId": 1
-    },
-    {
-      "id": 7,
-      "titulo": "Deploy do Notekeep",
-      "conteudo": "teste",
-      "tema": "warning",
-      "categoriaId": 3
+      "categoriaId": 4,
+      "arquivada": true
     }
   ]
 }
