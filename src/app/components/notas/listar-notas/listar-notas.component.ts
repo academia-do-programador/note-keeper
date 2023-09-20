@@ -55,4 +55,13 @@ export class ListarNotasComponent implements OnInit {
         .subscribe((notas: Nota[]) => (this.notas = notas));
     });
   }
+
+  filtrarNotasPorCategoria(categoria: Categoria | null) {
+    if (categoria == null) {
+      this.selecionarTodas();
+      return;
+    }
+
+    this.selecionarNotasPorCategoria(categoria);
+  }
 }
